@@ -26,6 +26,8 @@ with open("day11input.txt") as infile:
 
         monkeys.append(curMonkey)
 
+# Find the least common multiple, so you can reduce each item's value by that
+# amount
 values = []
 for monkey in monkeys:
     values.append(monkey["test"])
