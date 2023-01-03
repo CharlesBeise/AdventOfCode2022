@@ -30,12 +30,16 @@ for line in data:
 
 total = 0
 
-for i in range(-maxMan, xMax - xMin + maxMan):
+i = -maxMan
+while i < xMax - xMin + maxMan:
     for line in data:
         dist = abs(line[0] - i) + abs(line[1] - targetNum)
         if dist <= line[4]:
-            total += 1
+            length = (2 * line[4]) + 1 - (2 * (abs(line[1] - targetNum))) - (line[4] - dist)
+            total += length
+            i += length - 1
             break
+    i += 1
 
 for b in beacons:
     if b[1] == targetNum:
